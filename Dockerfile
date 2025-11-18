@@ -20,6 +20,8 @@ RUN flutter build web --release
 # Stage 2: Nginx to serve static build
 FROM nginx:alpine
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Remove default nginx content
 RUN rm -rf /usr/share/nginx/html/*
 
